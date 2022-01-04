@@ -12,7 +12,7 @@ import java.util.StringTokenizer;
  */
 public class greedy03 {
 
-    public void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
         StringBuilder sb = new StringBuilder();
