@@ -23,23 +23,20 @@
 
 
 ## 문법
-<pre>
-<code>
+```java
 public abstract class 클래스명 {
   // 필드
   // 생성자
   // 메소드
   // 추상메소드
 }
-</code>
-</pre>
+```
 
 ------------
 
 ## 예제
 
-<pre>
-<code>
+```java
 public abstract class Animal {
   public String kind;
   public void breath() {
@@ -49,14 +46,12 @@ public abstract class Animal {
   // 추상 메소드
   public abstract void sound();
 }
-</code>
-</pre>
+```
 
 > 여기서 이 추상 클래스를 상속받는 실체 클래스들은 반드시 sound()라는 추상 메소드를 상속받아 재정의(오버라이딩) 해야한다.
 
 
-<pre>
-<code>
+```java
 public class Dog extends Animal {
   public Dog() {
     this.kind = "포유류";
@@ -67,8 +62,7 @@ public class Dog extends Animal {
     System.out.println("멍멍!");
   }
 }
-</code>
-</pre>
+```
 
 > extends 키워드를 통해, Animal 추상클래스를 상속받은 Dog 클래스이다.
 > 여기서 Cat클래스를 생성하여 Animal 클래스를 상속받는다면 오버라이딩 하는 추상 메소드 부분은 달라질 수 있으므로, 다형성이 발생된다는 사실을 알 수 있다.
@@ -80,8 +74,7 @@ public class Dog extends Animal {
 
 아래 예시를 보면,
 
-<pre>
-<code>
+```java
 public class AnimalExample {
 
 	public static void main(String[] args) {
@@ -109,8 +102,7 @@ public class AnimalExample {
 		animal.sound();
 	}
 }
-</code>
-</pre>
+```
 
 > 타입의 다형성은 animalSound라는 메소드를 통해 매개변수도 타입의 다형성(자동 타입변환)을 보여줄 수 있음을 확인할 수 있다.
 
