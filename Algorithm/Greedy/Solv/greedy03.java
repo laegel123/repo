@@ -19,24 +19,23 @@ public class greedy03 {
 
         int t = Integer.parseInt(br.readLine());
 
-        int[] arr;
         while (t-- > 0) {
             int n = Integer.parseInt(br.readLine());
-            arr = new int[n];
+            long[] stocks = new long[n];
 
             // 배열 초기화
             st = new StringTokenizer(br.readLine());
             for (int i = 0; i < n; i++) {
-                arr[i] = Integer.parseInt(st.nextToken());
+                stocks[i] = Integer.parseInt(st.nextToken());
             }
 
-            int total = 0;
-            int max = arr[n-1];
+            long total = 0;
+            long max = 0;
             for (int i = n - 1; i >= 0; i--) {
-                if (arr[i] < max) {
-                    total += max-arr[i];
+                if (stocks[i] > max) {
+                    max = stocks[i];
                 } else {
-                    max = arr[i];
+                    total += max - stocks[i];
                 }
             }
             sb.append(total).append("\n");
