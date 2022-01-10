@@ -4,8 +4,8 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 /**
- * BOJ - 유기농 배추
- * https://www.acmicpc.net/problem/1012
+ * BOJ - ATM
+ * https://www.acmicpc.net/problem/11399
  *
  *
  */
@@ -15,29 +15,26 @@ public class Greedy02 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
 
-        int t = Integer.parseInt(br.readLine());
-
+        int[] time = new int[1001];
+        int n = Integer.parseInt(br.readLine());
         st = new StringTokenizer(br.readLine());
-        int m = Integer.parseInt(st.nextToken());
-        int n = Integer.parseInt(st.nextToken());
-        int k = Integer.parseInt(st.nextToken());
 
-        int[][] pos = new int[m][n];
-
-        while (k-- > 0) {
-            st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < n; i++) {
             int a = Integer.parseInt(st.nextToken());
-            int b = Integer.parseInt(st.nextToken());
-            pos[a][b]++;
+            time[a]++;
         }
 
-        int count = 0;
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; i < n; j++) {
-                if () {
-                }
+        int total = 0;
+
+        for (int i = 0; i < time.length; i++) {
+            while (time[i] > 0) {
+                total += time[i] + total;
+
             }
         }
+
+        System.out.println(total);
+
 
 
     }
