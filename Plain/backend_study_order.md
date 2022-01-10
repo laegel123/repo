@@ -1,4 +1,4 @@
-#backend 공부 순서
+# backend 공부 순서
 
 1. 서버사이드 언어 공부
     -> javascript, node.js, java, go, python, ruby
