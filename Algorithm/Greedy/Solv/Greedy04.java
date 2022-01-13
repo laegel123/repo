@@ -2,6 +2,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * BOJ - 로프
+ * https://www.acmicpc.net/problem/2217
+ *
+ *
+ */
+
 public class Greedy04 {
 
     public static void main(String[] args) throws IOException {
