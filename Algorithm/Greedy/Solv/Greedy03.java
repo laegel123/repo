@@ -10,7 +10,7 @@ import java.util.StringTokenizer;
  * for문을 반대로 돌아 max 값 갱신하는 식으로 해결
  *
  */
-public class greedy03 {
+public class Greedy03 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
