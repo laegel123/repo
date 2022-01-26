@@ -61,7 +61,10 @@ HTTP에 대해 공부하기에 앞서 인터넷이 무엇인지 확실히 하고
 > HTTP Request Message = Request Header + 빈 줄 + Request Body
 * Header
   1. 첫 번째 줄(start-line)
-    - 
+
+
+https://gmlwjd9405.github.io/2019/04/17/what-is-http-protocol.html 참고
+------
 
 * Header
 1. General Header : 요청과 응답 모두 공통으로 들어가는 Header를 의미한다.
