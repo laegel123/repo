@@ -61,9 +61,19 @@ HTTP에 대해 공부하기에 앞서 인터넷이 무엇인지 확실히 하고
 > HTTP Request Message = Request Header + 빈 줄 + Request Body
 * Header
   1. 첫 번째 줄(start-line)
+    - 요청 메소드 + 요청 URI + HTTP 프로토콜 버전 ( GET / background.png HTTP / 1.0) (POST / HTTP 1.1)
+  2. 두 번째 줄 ~ (HTTP headers)
+    - Header 정보들 ('Header Name: Header Value' 형태)
+    - 각 줄은 Line Feed(LF) 와 Carriage Return(CR)으로 구분된다.
+ 
+ * 빈 줄(empty-line)
+   - 요청에 대한 모든 메타 정보가 전송되었음을 알린다.
+
+ * Body
+   - POST, PUT의 경우에만 존재한다.
+   - 요청과 관련된 내용 (HTML 폼 콘텐츠 등) 
 
 
-https://gmlwjd9405.github.io/2019/04/17/what-is-http-protocol.html 참고
 ------
 
 * Header
