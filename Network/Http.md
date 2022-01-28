@@ -91,6 +91,8 @@ HTTP에 대해 공부하기에 앞서 인터넷이 무엇인지 확실히 하고
    - 실제 응답 리소스 데이터
    - 201, 204와 같은 상태 코드를 가진 응답에는 보통 body
 
+https://gmlwjd9405.github.io/2019/04/17/what-is-http-protocol.html
+
 
 ------
 
