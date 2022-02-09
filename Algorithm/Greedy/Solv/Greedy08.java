@@ -5,7 +5,7 @@ import java.util.StringTokenizer;
 
 /**
  *
- * CodeUp : 최소대금
+ * CodeUp : 리모컨
  *
  *
  */
@@ -16,7 +16,7 @@ public class Greedy08 {
         int a = Integer.parseInt(st.nextToken());
         int b = Integer.parseInt(st.nextToken());
 
-        int temp = b - a;
+        int temp = Math.abs(b - a);
         int count = 0;
 
         while (temp > 0) {
@@ -24,15 +24,20 @@ public class Greedy08 {
                 count += temp / 10;
                 temp = temp % 10;
             } else {
-                if (temp >= 5) {
+                if (temp == 9 || temp == 6 || temp == 4 || temp == 2) {
+                    count += 2;
+                } else if (temp == 8 || temp == 7 || temp == 3) {
+                    count += 3;
+                } else if (temp == 5 || temp == 1) {
                     count += 1;
-                    temp = temp - 5;
-                } else {
-                    
                 }
 
+                temp = 0;
+                
             }
         }
+
+        System.out.println(count);
 
     }
 }
