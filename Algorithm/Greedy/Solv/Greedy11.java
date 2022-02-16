@@ -10,7 +10,7 @@ import java.util.StringTokenizer;
  *
  */
 
-public class Main {
+public class Greedy11 {
 
     static int n;
     static int m;
