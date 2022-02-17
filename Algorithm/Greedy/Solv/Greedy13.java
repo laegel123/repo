@@ -9,7 +9,7 @@ import java.util.StringTokenizer;
  * https://www.acmicpc.net/problem/13305
  *
  **/
-public class Greedy14 {
+public class Greedy13 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
