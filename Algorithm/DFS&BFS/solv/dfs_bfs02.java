@@ -13,17 +13,25 @@ import java.util.StringTokenizer;
 **/
 public class dfs_bfs02 {
 
-    static StringBuilder sb = new StringBuilder();
+    // 방향 변수 저장
+    static int[] dx = {0, 1, 0, -1};
+    static int[] dy = {1, 0, -1, 0};
+
+    static String[][] army;
+    static boolean[][] visited;
+
+    static int width = 0;
+    static int length = 0;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int width = Integer.parseInt(st.nextToken());
-        int length = Integer.parseInt(st.nextToken());
+        width = Integer.parseInt(st.nextToken());
+        length = Integer.parseInt(st.nextToken());
 
-        String[][] army = new String[width][length];
-        boolean[][] visited = new boolean[width][length];
+        army = new String[width][length];
+        visited = new boolean[width][length];
 
         for (int i = 0; i < width; i++) {
             String[] str = br.readLine().split("");
@@ -33,18 +41,55 @@ public class dfs_bfs02 {
             }
         }
 
+        int wNum = 0;
+        int bNum = 0;
+
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < length; j++) {
+                if (!visited[i][j]) {
+                    int power = 1;
+                    power = dfs(army[i][j], i, j, power);
+
+                    if (army[i][j].equals("W")) {
+                        wNum += power * power;
+                    } else {
+                        bNum += power * power;
+                    }
+                }
+            }
+        }
+
+        System.out.println(wNum + " " + bNum);
 
     }
 
     /**
-    * @param color:적군,아군 구분 색 / army:전쟁군인 배열 / visited: 방문여부
-    * @return power:
-    * @desc
-    **/
-    public static void dfs(String color, String[][] army, boolean[][] visited) {
-        // 시작은 (0,0) 부터
-        visited[0][0] = true;
+     * @param color:색 구별 param, i: x방향, y: y방향, power: 근접 병사 합한 갯수
+     * @return power: 근접 병사 합한 갯수
+     * @desc
+     **/
+    public static int dfs(String color, int i, int j, int power) {
+        visited[i][j] = true;
 
+        for (int x = 0; x < dx.length; x++) {
+            int nowX = i + dx[x];
+            int nowY = j + dy[x];
+
+            if (nowX < 0 || nowX >= width || nowY < 0 || nowY >= length) {
+                continue;
+            }
+            if (!army[nowX][nowY].equals(color) || visited[nowX][nowY]) {
+                continue;
+            }
+
+            power++;
+            power = dfs(color, nowX, nowY, power);
+        }
+
+
+
+
+        return power;
 
     }
 
