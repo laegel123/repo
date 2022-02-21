@@ -9,6 +9,7 @@ import java.util.StringTokenizer;
  *
  * BOj : 전투
  * https://www.acmicpc.net/problem/1303
+ * 주의사항 : 가로 세로 값 주의. 이것때문에 30분 넘게 고민했다..
  *
 **/
 public class dfs_bfs02 {
@@ -27,8 +28,8 @@ public class dfs_bfs02 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        width = Integer.parseInt(st.nextToken());
         length = Integer.parseInt(st.nextToken());
+        width = Integer.parseInt(st.nextToken());
 
         army = new String[width][length];
         visited = new boolean[width][length];
