@@ -9,7 +9,7 @@ import java.util.*;
  * https://www.acmicpc.net/problem/2178
  * bfs로 구현
  **/
-public class Main {
+public class dfs_bfs03 {
 
     static int[][] maze;
     static boolean[][] visited;
