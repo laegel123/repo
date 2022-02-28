@@ -6,7 +6,6 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class dfs_bfs04 {
-
     static int width = 0;
     static int length = 0;
     static int trashNum = 0;
@@ -17,12 +16,14 @@ public class dfs_bfs04 {
     static int[] dx = {0, 1, 0, -1};
     static int[] dy = {1, 0, -1, 0};
 
+    static int size = 0;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        length = Integer.parseInt(st.nextToken());
         width = Integer.parseInt(st.nextToken());
+        length = Integer.parseInt(st.nextToken());
         trashNum = Integer.parseInt(st.nextToken());
 
         map = new int[width][length];
@@ -36,22 +37,27 @@ public class dfs_bfs04 {
             map[x][y] = 1;
         }
 
-        int size = 0;
+        int maxSize = 0;
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < length; j++) {
+                size = 0;
                 if (!visited[i][j]) {
-
+                    visited[i][j] = true;
+                    if (map[i][j] == 1) {
+                        size++;
+                    }
+                    dfs(i, j);
+                    if (size > maxSize){
+                        maxSize = size;
+                    }
                 }
             }
         }
-        dfs(0, 0);
+
+        System.out.println(maxSize);
     }
 
     public static void dfs(int i, int j) {
-        visited[i][j] = true;
-        if (map[i][j] == 1) {
-            size++;
-        }
 
         for (int x = 0; x < dx.length; x++) {
             int nowX = i + dx[x];
@@ -66,6 +72,9 @@ public class dfs_bfs04 {
             }
 
             visited[nowX][nowY] = true;
+            if (map[nowX][nowY] == 1) {
+                size++;
+            }
             dfs(nowX, nowY);
 
 
