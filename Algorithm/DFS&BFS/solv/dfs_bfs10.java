@@ -16,7 +16,6 @@ public class dfs_bfs10 {
     static int S;
     static int minTime = Integer.MAX_VALUE;
     static boolean[][] visited = new boolean[2001][2001];
-    static int cpt = 1;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
