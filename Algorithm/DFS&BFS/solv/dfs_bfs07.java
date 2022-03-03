@@ -9,70 +9,68 @@ import java.util.StringTokenizer;
 
 /**
  *
- * BOJ : 숨바꼭질3
- * https://www.acmicpc.net/problem/13549
+ * BOJ : 숨바꼭질2
+ * https://www.acmicpc.net/problem/12851
  *
-**/
+ **/
 public class dfs_bfs07 {
-
-    static int N;
-    static int K;
-    static boolean[] visited = new boolean[100001];
+    static int start;
+    static int target;
     static int min = Integer.MAX_VALUE;
+    static int route = 0;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        N = Integer.parseInt(st.nextToken());
-        K = Integer.parseInt(st.nextToken());
+        start = Integer.parseInt(st.nextToken());
+        target = Integer.parseInt(st.nextToken());
 
-        if (N >= K) {
-            System.out.println(N - K);
+        if (start >= target) {
+            System.out.println(start - target);
+            System.out.println(1);
             return;
         }
 
         bfs();
         System.out.println(min);
-
+        System.out.println(route);
 
     }
 
     public static void bfs() {
-        Queue<Node> q = new LinkedList<>();
-        q.offer(new Node(N, 0));
+        Queue<Integer> q = new LinkedList<>();
+        int[] visited = new int[100001];
+
+        q.offer(start);
+        visited[start] = 1;
 
         while (!q.isEmpty()) {
-            Node node = q.poll();
+            int now = q.poll();
 
-            visited[node.x] = true;
-
-            if (node.x == K) {
-                min = Math.min(min, node.time);
+            if (min < visited[now]) {
+                return;
             }
 
-            if (node.x * 2 <= 100000 && !visited[node.x * 2]) {
-                q.offer(new Node(node.x * 2, node.time));
+            int[] move = new int[]{now - 1, now + 1, now * 2};
+
+            for (int i = 0; i < 3; i++) {
+                int next = move[i];
+
+                if (next < 0 || next > 100000) {
+                    continue;
+                }
+
+                if (next == target) {
+                    min = visited[now];
+                    route++;
+                }
+
+                if (visited[next] == 0 || visited[next] == visited[now] + 1) {
+                    q.offer(next);
+                    visited[next] = visited[now] + 1;
+                }
             }
-            if (node.x + 1 <= 100000 && !visited[node.x + 1]) {
-                q.offer(new Node(node.x + 1, node.time + 1));
-            }
-            if (node.x - 1 >= 0 && !visited[node.x - 1]) {
-                q.offer(new Node(node.x - 1, node.time + 1));
-            }
-
-        }
-
-    }
-
-
-    public static class Node {
-        int x;
-        int time;
-
-        public Node(int x, int time) {
-            this.x = x;
-            this.time = time;
         }
     }
 

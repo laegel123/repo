@@ -13,7 +13,7 @@ import java.util.StringTokenizer;
  * dfs 인접리스트로 해결
  *
 **/
-public class bfs_dfs05_3 {
+public class dfs_bfs05_3 {
 
     static int cptNum = 0;
     static ArrayList<Integer>[] mapList;
