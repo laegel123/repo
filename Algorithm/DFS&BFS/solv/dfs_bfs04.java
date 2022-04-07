@@ -5,6 +5,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
+/**
+ *
+ * BOJ - 음식물 피하기 (1743번)
+ * https://www.acmicpc.net/problem/1743
+ *
+ **/
 public class dfs_bfs04 {
     static int width = 0;
     static int length = 0;
