@@ -17,6 +17,7 @@
 13. BOJ - 13305번 : 주유소
 14. BOJ - 16435번 : 스네이크버드
 15. BOJ - 13458번 : 시험감독
+16. leetcode - Last Stone Weight
 
 
 ## 풀 문제들
